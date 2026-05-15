@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrindGrades.com | Student Athlete Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="site-nav">
+      <a class="brand" href="#">GrindGrades.com</a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#planner">Planner</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <div class="hero-copy">
+        <p class="eyebrow">Balance academics, training, and your future</p>
+        <h1>GrindGrades.com helps student athletes stay on top of school, workouts, recruiting, and goals.</h1>
+        <p>Designed for athletes who want to dominate in the classroom and in competition. Track grades, plan workouts, organize recruiting details, and stay focused with built-in study tools.</p>
+        <div class="hero-actions">
+          <a href="#planner" class="button primary">Explore Planner</a>
+          <a href="#features" class="button secondary">View Features</a>
+        </div>
+      </div>
+      <div class="hero-panel card">
+        <div class="hero-kpi">
+          <div>
+            <strong id="kpi-total-hours">0h</strong>
+            <span>Total Studied</span>
+          </div>
+          <div>
+            <strong id="kpi-best-subject">—</strong>
+            <span>Best Subject</span>
+          </div>
+          <div>
+            <strong id="kpi-streak">0</strong>
+            <span>Current Streak</span>
+          </div>
+        </div>
+        <div class="hero-highlight">
+          <h2>Stay sharp with a single dashboard</h2>
+          <p>Whether you're logging study sessions or preparing for the next tryout, Grind-Grades keeps your routines and goals in one place.</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="features" class="section features-section card">
+      <div class="section-heading">
+        <p class="eyebrow">Explore Features</p>
+        <h2>Sport-ready planning for academics, training, and recruiting.</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Grade Tracker</h3>
+          <p>Monitor assignments, GPA, and academic progress so you never miss a deadline.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Training Planner</h3>
+          <p>Organize workouts, practices, and recovery schedules with consistent focus.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Recruiting Hub</h3>
+          <p>Keep stats, highlight videos, and coach contacts in one place for faster recruiting.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Study Planner</h3>
+          <p>Log sessions, set goals, and use a Pomodoro timer to build consistent study habits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="planner" class="section planner-section">
+      <div class="section-heading">
+        <p class="eyebrow">Study Planner</p>
+        <h2>Track sessions, subjects, goals, and focus time in one place.</h2>
+      </div>
+      <div class="grid-section">
+        <div class="card">
+          <h2>Subjects</h2>
+          <form id="subject-form" class="form-row">
+            <input type="text" id="subject-name" placeholder="Add subject (Math, Biology...)" />
+            <button type="submit">Add</button>
+          </form>
+          <div id="subject-list" class="list"></div>
+        </div>
+
+        <div class="card">
+          <h2>Study Session</h2>
+          <label for="session-subject">Choose a subject</label>
+          <select id="session-subject"></select>
+          <div class="session-controls">
+            <button id="start-session">Start Study Session</button>
+            <button id="end-session" class="secondary" disabled>End Session</button>
+          </div>
+          <div class="session-info">
+            <p>Active Session: <span id="active-session-status">None</span></p>
+            <p>Elapsed: <strong id="active-session-time">00:00:00</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-section">
+        <div class="card">
+          <h2>Goals</h2>
+          <form id="goal-form" class="form-row">
+            <input type="text" id="goal-title" placeholder="Goal description" />
+            <input type="number" id="goal-hours" min="1" placeholder="Hours target" />
+            <button type="submit">Save Goal</button>
+          </form>
+          <div id="goal-list" class="list"></div>
+        </div>
+
+        <div class="card">
+          <h2>Pomodoro Timer</h2>
+          <div class="timer-display">
+            <span id="pomodoro-label">Ready</span>
+            <strong id="pomodoro-time">25:00</strong>
+          </div>
+          <div class="session-controls">
+            <button id="pomodoro-start">Start Work</button>
+            <button id="pomodoro-reset" class="secondary">Reset</button>
+          </div>
+          <div class="pomodoro-info">
+            <span>25 min work / 5 min break</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="card analytics-card">
+        <h2>Analytics</h2>
+        <div class="analytics-grid">
+          <div class="analytics-panel">
+            <strong>Total study time</strong>
+            <p id="analytics-total">0 hours logged.</p>
+          </div>
+          <div class="analytics-panel">
+            <strong>Best subject</strong>
+            <p id="analytics-best">No sessions yet.</p>
+          </div>
+          <div class="analytics-panel">
+            <strong>Current streak</strong>
+            <p id="analytics-streak">0 days.</p>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <strong>Subject breakdown</strong>
+          <div id="subject-chart" class="chart"></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="about" class="section about-section card">
+      <div>
+        <p class="eyebrow">About Grind-Grades</p>
+        <h2>Built for student athletes who want to win in the classroom and on the field.</h2>
+        <p>Grind-Grades combines academic planning, training organization, recruiting support, and study tools in a single experience. Use it to stay accountable, track progress, and execute your daily routines.</p>
+      </div>
+      <div class="about-grid">
+        <div>
+          <h3>Academic focus</h3>
+          <p>Keep grade tracking and study goals visible to maintain scholarship eligibility and classroom success.</p>
+        </div>
+        <div>
+          <h3>Performance planning</h3>
+          <p>Map out practice sessions, recovery, and training so you can peak at the right time.</p>
+        </div>
+        <div>
+          <h3>Recruiting readiness</h3>
+          <p>Store the details coaches need, from stats to highlight video links and contacts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-card card">
+      <h2>Contact</h2>
+      <p>Questions or feedback? Reach out anytime.</p>
+      <p><strong>Email:</strong> <a href="mailto:info@grindgrades.com">info@grindgrades.com</a></p>
+      <p>Visit <a href="https://GrindGrades.com">GrindGrades.com</a> for the full experience.</p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
